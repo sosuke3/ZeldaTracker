@@ -28,6 +28,11 @@ namespace ZeldaTracker
         public double GrayscaleEffect { get; set; } = UnsetValue;
         public string ItemChainName { get; set; }
 
+        public ItemChain(string chainName, string imagePath)
+            :this(chainName, new[] { imagePath } )
+        {
+        }
+
         public ItemChain(string chainName, string[] imagePaths)
         {
             this.ItemChainName = chainName;
