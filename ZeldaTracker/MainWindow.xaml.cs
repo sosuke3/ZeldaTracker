@@ -24,7 +24,7 @@ namespace ZeldaTracker
     public partial class MainWindow : Window
     {
         public List<InventoryItem> items { get; set; } = new List<InventoryItem>();
-
+        public List<ItemChain> itemChains { get; set; } = new List<ItemChain>();
 
         public MainWindow()
         {
@@ -46,17 +46,20 @@ namespace ZeldaTracker
 
                 if (e.ChangedButton == MouseButton.Left)
                 {
-                    ((InventoryItem)img.DataContext).FoundItem();
+                    ((ItemChain)img.DataContext).NextInChain();
                 }
                 else
                 {
-                    ((InventoryItem)img.DataContext).ResetItem();
+                    ((ItemChain)img.DataContext).PreviousInChain();
                 }
             }
         }
 
         private void LoadItems()
         {
+            this.itemChains.Add(new ItemChain("Agahnim", new[] { @"images\agahnim.png" }));
+            this.itemChains.Add(new ItemChain("Tunic", new[] { @"images\greentunic.png", @"images\bluetunic.png", @"images\redtunic.png" }));
+
             this.items.Add(new InventoryItem("Agahnim", @"images\agahnim.png"));
             this.items.Add(new InventoryItem("Armos", @"images\Armos.png"));
             this.items.Add(new InventoryItem("Bee Bottle", @"images\beebottle.png"));
@@ -83,7 +86,7 @@ namespace ZeldaTracker
             this.items.Add(new InventoryItem("Crystal 6", @"images\crystal6.png"));
             this.items.Add(new InventoryItem("Crystal 7", @"images\crystal7.png"));
             this.items.Add(new InventoryItem("Empty Bottle", @"images\emptybottle.png"));
-            this.items.Add(new InventoryItem("Empty Heart Container", @"images\emptyheartcontainer.png"));
+            this.items.Add(new InventoryItem("Zero Pieces of Heart", @"images\emptyheartcontainer.png"));
             this.items.Add(new InventoryItem("Ether", @"images\ether.png"));
             this.items.Add(new InventoryItem("Farie in Bottle", @"images\fariebottle.png"));
             this.items.Add(new InventoryItem("Fighter's Sword", @"images\fightersword.png"));
@@ -116,7 +119,7 @@ namespace ZeldaTracker
             this.items.Add(new InventoryItem("Moon Pearl", @"images\moonpearl.png"));
             this.items.Add(new InventoryItem("Mushroom", @"images\mushroom.png"));
             this.items.Add(new InventoryItem("One Bottle", @"images\onebottle.png"));
-            this.items.Add(new InventoryItem("One Heart Container", @"images\oneheartcontainerpiece.png"));
+            this.items.Add(new InventoryItem("One Piece of Heart", @"images\oneheartcontainerpiece.png"));
             this.items.Add(new InventoryItem("Opened Chest", @"images\openedchest.png"));
             this.items.Add(new InventoryItem("Master Sword Pedestal", @"images\pedestal.png"));
             this.items.Add(new InventoryItem("Piece of Heart", @"images\pieceofheart.png"));
@@ -137,7 +140,7 @@ namespace ZeldaTracker
             this.items.Add(new InventoryItem("Tempered Sword", @"images\temperedsword.png"));
             this.items.Add(new InventoryItem("Thieves' Town", @"images\thievestown.png"));
             this.items.Add(new InventoryItem("Three Bottles", @"images\threebottles.png"));
-            this.items.Add(new InventoryItem("Three Heart Container Pieces", @"images\threeheartcontainerpiece.png"));
+            this.items.Add(new InventoryItem("Three Pieces of Heart", @"images\threeheartcontainerpiece.png"));
             this.items.Add(new InventoryItem("Titan's Mitt", @"images\titanmitts.png"));
             this.items.Add(new InventoryItem("Turtle Rock", @"images\turtlerock.png"));
             this.items.Add(new InventoryItem("Two Bottles", @"images\twobottles.png"));

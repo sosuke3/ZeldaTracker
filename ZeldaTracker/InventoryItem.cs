@@ -10,8 +10,11 @@ namespace ZeldaTracker
 {
     public class InventoryItem : INotifyPropertyChanged
     {
+        private const double UnsetValue = 0.0;
+        private const double SetValue = 1.0;
+
         public BitmapImage Icon { get; set; }
-        public double GrayscaleEffect { get; set; } = 0.0;
+        public double GrayscaleEffect { get; set; } = UnsetValue;
         public string ItemName { get; set; }
 
         public InventoryItem(string name, string path)
@@ -22,13 +25,13 @@ namespace ZeldaTracker
 
         public void FoundItem()
         {
-            this.GrayscaleEffect = 1.0;
+            this.GrayscaleEffect = SetValue;
             RaisePropertyChanged("GrayscaleEffect");
         }
 
         public void ResetItem()
         {
-            this.GrayscaleEffect = 0.0;
+            this.GrayscaleEffect = UnsetValue;
             RaisePropertyChanged("GrayscaleEffect");
         }
 
