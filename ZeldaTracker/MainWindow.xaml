@@ -7,71 +7,70 @@
         xmlns:local="clr-namespace:ZeldaTracker"
         mc:Ignorable="d"
         Title="MainWindow" Height="337.54" Width="390.21">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+    <WrapPanel Orientation="Horizontal">
+        <ItemsControl ItemsSource="{Binding items}">
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Image Width="32" Height="32" Source="{Binding Icon}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp">
+                        <Image.Effect>
+                            <effect:GrayscaleEffect DesaturationFactor="{Binding GrayscaleEffect}"></effect:GrayscaleEffect>
+                        </Image.Effect>
+                    </Image>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
 
-        <Image Name="icon00" Grid.Row="0" Grid.Column="0" Source="{Binding iconImages[0]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[0], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon01" Grid.Row="0" Grid.Column="1" Source="{Binding iconImages[1]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[1], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon02" Grid.Row="0" Grid.Column="2" Source="{Binding iconImages[2]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[2], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon03" Grid.Row="0" Grid.Column="3" Source="{Binding iconImages[3]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[3], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon04" Grid.Row="0" Grid.Column="4" Source="{Binding iconImages[4]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[4], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon05" Grid.Row="0" Grid.Column="5" Source="{Binding iconImages[5]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[5], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon06" Grid.Row="0" Grid.Column="6" Source="{Binding iconImages[6]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[6], Mode=Default}" /></Image.Effect></Image>
+        <!--<Image Name="icon00" Width="32" Height="32" Source="{Binding iconImages[0]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[0], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon01" Width="32" Height="32" Source="{Binding iconImages[1]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[1], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon02" Width="32" Height="32" Source="{Binding iconImages[2]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[2], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon03" Width="32" Height="32" Source="{Binding iconImages[3]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[3], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon04" Width="32" Height="32" Source="{Binding iconImages[4]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[4], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon05" Width="32" Height="32" Source="{Binding iconImages[5]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[5], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon06" Width="32" Height="32" Source="{Binding iconImages[6]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[6], Mode=Default}" /></Image.Effect></Image>
 
-        <Image Name="icon10" Grid.Row="1" Grid.Column="0" Source="{Binding iconImages[7]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[7], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon11" Grid.Row="1" Grid.Column="1" Source="{Binding iconImages[8]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[8], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon12" Grid.Row="1" Grid.Column="2" Source="{Binding iconImages[9]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[9], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon13" Grid.Row="1" Grid.Column="3" Source="{Binding iconImages[10]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[10], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon14" Grid.Row="1" Grid.Column="4" Source="{Binding iconImages[11]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[11], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon15" Grid.Row="1" Grid.Column="5" Source="{Binding iconImages[12]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[12], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon16" Grid.Row="1" Grid.Column="6" Source="{Binding iconImages[13]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[13], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon10" Width="32" Height="32" Source="{Binding iconImages[7]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[7], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon11" Width="32" Height="32" Source="{Binding iconImages[8]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[8], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon12" Width="32" Height="32" Source="{Binding iconImages[9]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[9], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon13" Width="32" Height="32" Source="{Binding iconImages[10]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[10], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon14" Width="32" Height="32" Source="{Binding iconImages[11]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[11], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon15" Width="32" Height="32" Source="{Binding iconImages[12]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[12], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon16" Width="32" Height="32" Source="{Binding iconImages[13]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[13], Mode=Default}" /></Image.Effect></Image>
 
-        <Image Name="icon20" Grid.Row="2" Grid.Column="0" Source="{Binding iconImages[14]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[14], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon21" Grid.Row="2" Grid.Column="1" Source="{Binding iconImages[15]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[15], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon22" Grid.Row="2" Grid.Column="2" Source="{Binding iconImages[16]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[16], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon23" Grid.Row="2" Grid.Column="3" Source="{Binding iconImages[17]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[17], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon24" Grid.Row="2" Grid.Column="4" Source="{Binding iconImages[18]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[18], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon25" Grid.Row="2" Grid.Column="5" Source="{Binding iconImages[19]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[19], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon26" Grid.Row="2" Grid.Column="6" Source="{Binding iconImages[20]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[20], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon20" Width="32" Height="32" Source="{Binding iconImages[14]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[14], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon21" Width="32" Height="32" Source="{Binding iconImages[15]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[15], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon22" Width="32" Height="32" Source="{Binding iconImages[16]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[16], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon23" Width="32" Height="32" Source="{Binding iconImages[17]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[17], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon24" Width="32" Height="32" Source="{Binding iconImages[18]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[18], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon25" Width="32" Height="32" Source="{Binding iconImages[19]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[19], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon26" Width="32" Height="32" Source="{Binding iconImages[20]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[20], Mode=Default}" /></Image.Effect></Image>
 
-        <Image Name="icon30" Grid.Row="3" Grid.Column="0" Source="{Binding iconImages[21]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[21], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon31" Grid.Row="3" Grid.Column="1" Source="{Binding iconImages[22]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[22], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon32" Grid.Row="3" Grid.Column="2" Source="{Binding iconImages[23]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[23], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon33" Grid.Row="3" Grid.Column="3" Source="{Binding iconImages[24]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[24], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon34" Grid.Row="3" Grid.Column="4" Source="{Binding iconImages[25]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[25], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon35" Grid.Row="3" Grid.Column="5" Source="{Binding iconImages[26]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[26], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon36" Grid.Row="3" Grid.Column="6" Source="{Binding iconImages[27]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[27], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon30" Width="32" Height="32" Source="{Binding iconImages[21]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[21], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon31" Width="32" Height="32" Source="{Binding iconImages[22]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[22], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon32" Width="32" Height="32" Source="{Binding iconImages[23]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[23], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon33" Width="32" Height="32" Source="{Binding iconImages[24]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[24], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon34" Width="32" Height="32" Source="{Binding iconImages[25]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[25], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon35" Width="32" Height="32" Source="{Binding iconImages[26]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[26], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon36" Width="32" Height="32" Source="{Binding iconImages[27]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[27], Mode=Default}" /></Image.Effect></Image>
 
-        <Image Name="icon40" Grid.Row="4" Grid.Column="0" Source="{Binding iconImages[28]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[28], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon41" Grid.Row="4" Grid.Column="1" Source="{Binding iconImages[29]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[29], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon42" Grid.Row="4" Grid.Column="2" Source="{Binding iconImages[30]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[30], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon43" Grid.Row="4" Grid.Column="3" Source="{Binding iconImages[31]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[31], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon44" Grid.Row="4" Grid.Column="4" Source="{Binding iconImages[32]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[32], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon45" Grid.Row="4" Grid.Column="5" Source="{Binding iconImages[33]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[33], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon46" Grid.Row="4" Grid.Column="6" Source="{Binding iconImages[34]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[34], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon40" Width="32" Height="32" Source="{Binding iconImages[28]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[28], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon41" Width="32" Height="32" Source="{Binding iconImages[29]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[29], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon42" Width="32" Height="32" Source="{Binding iconImages[30]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[30], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon43" Width="32" Height="32" Source="{Binding iconImages[31]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[31], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon44" Width="32" Height="32" Source="{Binding iconImages[32]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[32], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon45" Width="32" Height="32" Source="{Binding iconImages[33]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[33], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon46" Width="32" Height="32" Source="{Binding iconImages[34]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[34], Mode=Default}" /></Image.Effect></Image>
 
-        <Image Name="icon50" Grid.Row="5" Grid.Column="0" Source="{Binding iconImages[35]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[35], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon51" Grid.Row="5" Grid.Column="1" Source="{Binding iconImages[36]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[36], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon52" Grid.Row="5" Grid.Column="2" Source="{Binding iconImages[37]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[37], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon53" Grid.Row="5" Grid.Column="3" Source="{Binding iconImages[38]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[38], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon54" Grid.Row="5" Grid.Column="4" Source="{Binding iconImages[39]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[39], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon55" Grid.Row="5" Grid.Column="5" Source="{Binding iconImages[40]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[40], Mode=Default}" /></Image.Effect></Image>
-        <Image Name="icon56" Grid.Row="5" Grid.Column="6" Source="{Binding iconImages[41]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[41], Mode=Default}" /></Image.Effect></Image>
-    </Grid>
+        <Image Name="icon50" Width="32" Height="32" Source="{Binding iconImages[35]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[35], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon51" Width="32" Height="32" Source="{Binding iconImages[36]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[36], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon52" Width="32" Height="32" Source="{Binding iconImages[37]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[37], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon53" Width="32" Height="32" Source="{Binding iconImages[38]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[38], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon54" Width="32" Height="32" Source="{Binding iconImages[39]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[39], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon55" Width="32" Height="32" Source="{Binding iconImages[40]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[40], Mode=Default}" /></Image.Effect></Image>
+        <Image Name="icon56" Width="32" Height="32" Source="{Binding iconImages[41]}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp"><Image.Effect><effect:GrayscaleEffect DesaturationFactor="{Binding grayscaleEffect[41], Mode=Default}" /></Image.Effect></Image>-->
+    </WrapPanel>
 </Window>
