@@ -16,6 +16,7 @@ namespace ZeldaTracker
         private int _currentIndex = 0;
         private List<InventoryItem> _itemChain = new List<InventoryItem>();
         private bool _isUnset = true;
+        private bool _defaultEnabled = false;
 
         public BitmapImage Icon
         {
@@ -28,14 +29,20 @@ namespace ZeldaTracker
         public double GrayscaleEffect { get; set; } = UnsetValue;
         public string ItemChainName { get; set; }
 
-        public ItemChain(string chainName, string imagePath)
-            :this(chainName, new[] { imagePath } )
+        public ItemChain(string chainName, string imagePath, bool startEnabled=false)
+            :this(chainName, new[] { imagePath }, startEnabled )
         {
         }
 
-        public ItemChain(string chainName, string[] imagePaths)
+        public ItemChain(string chainName, string[] imagePaths, bool startEnabled = false)
         {
             this.ItemChainName = chainName;
+            _defaultEnabled = startEnabled;
+            if (startEnabled)
+            {
+                _isUnset = false;
+                GrayscaleEffect = SetValue;
+            }
             foreach(string s in imagePaths)
             {
                 this._itemChain.Add(new InventoryItem(s, s));
@@ -56,7 +63,7 @@ namespace ZeldaTracker
 
         public void PreviousInChain()
         {
-            if (_currentIndex == 0 && _isUnset == false)
+            if (_currentIndex == 0 && _isUnset == false && _defaultEnabled != true)
             {
                 _isUnset = true;
                 GrayscaleEffect = UnsetValue;
@@ -71,11 +78,14 @@ namespace ZeldaTracker
 
         public void ResetChain()
         {
-            _isUnset = true;
+            if (_defaultEnabled != true)
+            {
+                _isUnset = true;
+                GrayscaleEffect = UnsetValue;
+                RaisePropertyChanged("GrayscaleEffect");
+            }
             _currentIndex = 0;
-            GrayscaleEffect = UnsetValue;
             RaisePropertyChanged("Icon");
-            RaisePropertyChanged("GrayscaleEffect");
         }
 
         #region INotifyPropertyChanged

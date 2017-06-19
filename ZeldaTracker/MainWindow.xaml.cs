@@ -62,7 +62,7 @@ namespace ZeldaTracker
             this.itemChains.Add(new ItemChain("Moldorm", @"images\Moldorm.png"));
             this.itemChains.Add(new ItemChain("Agahnim", @"images\agahnim.png"));
 
-            this.itemChains.Add(new ItemChain("Tunic", new[] { @"images\greentunic.png", @"images\bluetunic.png", @"images\redtunic.png" }));
+            this.itemChains.Add(new ItemChain("Tunic", new[] { @"images\greentunic.png", @"images\bluetunic.png", @"images\redtunic.png" }, true));
 
             this.itemChains.Add(new ItemChain("Blue Boomerang", @"images\blueboomerang.png"));
             this.itemChains.Add(new ItemChain("Magic Boomerang", @"images\magicboomerang.png"));
@@ -78,7 +78,7 @@ namespace ZeldaTracker
             this.itemChains.Add(new ItemChain("Blue Potion", @"images\bluepotion.png"));
             this.itemChains.Add(new ItemChain("Farie in Bottle", @"images\fariebottle.png"));
 
-            this.itemChains.Add(new ItemChain("Bottles", new string[] { @"images\onebottle.png", @"images\twobottles.png", @"images\threebottles.png", @"images\fourbottles.png" }));
+            this.itemChains.Add(new ItemChain("Bottles", new string[] { @"images\emptybottle.png", @"images\onebottle.png", @"images\twobottles.png", @"images\threebottles.png", @"images\fourbottles.png" }, true));
 
             this.itemChains.Add(new ItemChain("Green Pendant", @"images\greenpendant.png"));
             this.itemChains.Add(new ItemChain("Blue Pendant", @"images\bluependant.png"));
@@ -97,7 +97,7 @@ namespace ZeldaTracker
             this.itemChains.Add(new ItemChain("Cane of Byrna", @"images\byrna.png"));
             this.itemChains.Add(new ItemChain("Cane of Somaria", @"images\somaria.png"));
 
-            this.itemChains.Add(new ItemChain("Chest", new string[] { @"images\closedchest.png", @"images\openedchest.png" }));
+            this.itemChains.Add(new ItemChain("Chest", new string[] { @"images\closedchest.png", @"images\openedchest.png" }, true));
 
             this.itemChains.Add(new ItemChain("Crystal", @"images\crystal.png"));
             this.itemChains.Add(new ItemChain("Crystal 1", @"images\crystal1.png"));
@@ -127,7 +127,7 @@ namespace ZeldaTracker
 
             this.itemChains.Add(new ItemChain("Piece of Heart", @"images\pieceofheart.png"));
 
-            this.itemChains.Add(new ItemChain("Zero Pieces of Heart", new string[] { @"images\emptyheartcontainer.png", @"images\oneheartcontainerpiece.png", @"images\twoheartcontainerpiece.png", @"images\threeheartcontainerpiece.png" }));
+            this.itemChains.Add(new ItemChain("Zero Pieces of Heart", new string[] { @"images\emptyheartcontainer.png", @"images\oneheartcontainerpiece.png", @"images\twoheartcontainerpiece.png", @"images\threeheartcontainerpiece.png" }, true));
 
             this.itemChains.Add(new ItemChain("Hookshot", @"images\hookshot.png"));
 
