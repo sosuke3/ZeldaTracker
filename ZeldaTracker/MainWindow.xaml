@@ -6,7 +6,8 @@
         xmlns:effect="clr-namespace:GrayscaleEffect;assembly=GrayscaleEffect"
         xmlns:local="clr-namespace:ZeldaTracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="337.54" Width="390.21">
+        Title="MainWindow" Height="337.54" Width="390.21"
+        WindowStyle="ToolWindow">
     <WrapPanel Orientation="Horizontal">
         <ItemsControl ItemsSource="{Binding itemChains}">
             <ItemsControl.ItemsPanel>
