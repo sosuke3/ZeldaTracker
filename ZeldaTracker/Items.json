@@ -182,9 +182,6 @@
 				"ItemName": "Empty Bottle",
 				"IconPath": "images\/emptybottle.png"
 			}, {
-				"ItemName": "Empty Bottle",
-				"IconPath": "images\/emptybottle.png"
-			}, {
 				"ItemName": "One Bottle",
 				"IconPath": "images\/onebottle.png"
 			}, {
@@ -586,8 +583,8 @@
 				"IconPath": "images\/threeheartcontainerpiece.png"
 			}
 		],
-		"DefaultEnabled": false,
-		"Loopable": false,
+		"DefaultEnabled": true,
+		"Loopable": true,
 		"Countable": false
 	}, {
 		"ItemChainName": "Hookshot",
