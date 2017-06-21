@@ -138,12 +138,13 @@ namespace ZeldaTracker
 
             foreach(var c in chains)
             {
-                this.itemChains.Add(new ItemChain(c.ItemChainName,
+                this.itemChains.Add(ItemChainFactory.BuildItemChain(c.ItemChainName,
                                                   c.ItemChainType, 
                                                   c.ItemChain.Select(x => new ItemIcon(x.ItemName, x.IconPath)).ToList(), 
                                                   c.DefaultEnabled, 
                                                   c.Loopable, 
-                                                  c.Countable));
+                                                  c.Countable,
+                                                  c.MaxCount));
             }
         }
 

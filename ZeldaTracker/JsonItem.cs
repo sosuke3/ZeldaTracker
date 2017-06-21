@@ -14,6 +14,7 @@ namespace ZeldaTracker
         public bool DefaultEnabled { get; set; }
         public bool Loopable { get; set; }
         public bool Countable { get; set; }
+        public int MaxCount { get; set; }
     }
     public class JsonItem
     {

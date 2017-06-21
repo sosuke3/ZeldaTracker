@@ -6,8 +6,11 @@
         xmlns:effect="clr-namespace:GrayscaleEffect;assembly=GrayscaleEffect"
         xmlns:local="clr-namespace:ZeldaTracker"
         mc:Ignorable="d"
-        Title="MainWindow" Height="337.54" Width="390.21"
-        WindowStyle="ToolWindow">
+        Title="MainWindow" Height="380" Width="244"
+        WindowStyle="ToolWindow" Background="Black" Foreground="White">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
     <WrapPanel Orientation="Horizontal">
         <ItemsControl ItemsSource="{Binding itemChains}">
             <ItemsControl.ItemsPanel>
@@ -17,11 +20,24 @@
             </ItemsControl.ItemsPanel>
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <Image Width="32" Height="32" Source="{Binding Icon}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp">
-                        <Image.Effect>
-                            <effect:GrayscaleEffect DesaturationFactor="{Binding GrayscaleEffect}"></effect:GrayscaleEffect>
-                        </Image.Effect>
-                    </Image>
+                    <Grid>
+                        <Image Width="32" Height="32" Source="{Binding Icon}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp">
+                            <Image.Effect>
+                                <effect:GrayscaleEffect DesaturationFactor="{Binding GrayscaleEffect}"></effect:GrayscaleEffect>
+                            </Image.Effect>
+                        </Image>
+                        <local:OutlinedTextBlock Style="{StaticResource SquareFont}"
+                                                 FontSize="12pt" 
+                                                 FontWeight="Black" 
+                                                 StrokeThickness="2" 
+                                                 Stroke="Black" 
+                                                 Fill="White"
+                                                 Text="{Binding Count}"
+                                                 Visibility="{Binding Path=Countable, Converter={StaticResource BooleanToVisibilityConverter}}" 
+                                                 HorizontalAlignment="Right"
+                                                 VerticalAlignment="Bottom" />
+
+                    </Grid>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>

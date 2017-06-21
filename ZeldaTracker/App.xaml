@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:ZeldaTracker"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="SquareFont">
+            <Setter Property="TextElement.FontFamily" Value="pack://application:,,,/#Minecrafter" />
+        </Style>
     </Application.Resources>
 </Application>

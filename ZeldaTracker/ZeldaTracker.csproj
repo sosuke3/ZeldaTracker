@@ -63,6 +63,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CountableItemChain.cs" />
+    <Compile Include="DefaultEnabledItemChain.cs" />
+    <Compile Include="ItemChainFactory.cs" />
+    <Compile Include="LoopableItemChain.cs" />
+    <Compile Include="StrokeTextBlock.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -101,6 +106,7 @@
     <None Include="Items.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Resource Include="Minecrafter.Reg.ttf" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
