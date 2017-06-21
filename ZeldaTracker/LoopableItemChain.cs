@@ -8,8 +8,8 @@ namespace ZeldaTracker
 {
     public class LoopableItemChain : ItemChain
     {
-        public LoopableItemChain(string chainName, string chainType, List<ItemIcon> icons, bool startEnabled = false, bool loopable = false, bool countable = false) 
-            : base(chainName, chainType, icons, startEnabled, loopable, countable)
+        public LoopableItemChain(JsonItemChain chain) 
+            : base(chain)
         {
             SetSetState();
         }

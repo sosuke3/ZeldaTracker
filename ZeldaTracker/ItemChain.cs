@@ -37,18 +37,18 @@ namespace ZeldaTracker
         public bool Countable { get { return _countable; } }
         public InventoryItem CurrentItem { get { return _itemChain[_currentIndex]; } }
 
-        public ItemChain(string chainName, string chainType, List<ItemIcon> icons, bool startEnabled = false, bool loopable = false, bool countable = false, int maxCount = 0)
+        public ItemChain(JsonItemChain chain)
         {
-            this.ItemChainName = chainName;
-            this.ItemChainType = chainType;
-            this._defaultEnabled = startEnabled;
-            this._loopable = loopable;
-            this._countable = countable;
-            this._maxCount = maxCount;
+            this.ItemChainName = chain.ItemChainName;
+            this.ItemChainType = chain.ItemChainType;
+            this._defaultEnabled = chain.DefaultEnabled;
+            this._loopable = chain.Loopable;
+            this._countable = chain.Countable;
+            this._maxCount = chain.MaxCount;
 
-            foreach (var i in icons)
+            foreach (var i in chain.ItemChain)
             {
-                this._itemChain.Add(new InventoryItem(i.Name, i.ImagePath));
+                this._itemChain.Add(new InventoryItem(i.ItemName, i.IconPath));
             }
         }
 

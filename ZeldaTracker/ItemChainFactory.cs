@@ -8,21 +8,21 @@ namespace ZeldaTracker
 {
     public static class ItemChainFactory
     {
-        public static ItemChain BuildItemChain(string chainName, string chainType, List<ItemIcon> icons, bool startEnabled = false, bool loopable = false, bool countable = false, int maxCount = 0)
+        public static ItemChain BuildItemChain(JsonItemChain chain)
         {
-            if (startEnabled)
+            if (chain.DefaultEnabled)
             {
-                return new DefaultEnabledItemChain(chainName, chainType, icons, startEnabled, loopable, countable);
+                return new DefaultEnabledItemChain(chain);
             }
-            if (countable)
+            if (chain.Countable)
             {
-                return new CountableItemChain(chainName, chainType, icons, startEnabled, loopable, countable, maxCount);
+                return new CountableItemChain(chain);
             }
-            if (loopable)
+            if (chain.Loopable)
             {
-                return new LoopableItemChain(chainName, chainType, icons, startEnabled, loopable, countable);
+                return new LoopableItemChain(chain);
             }
-            return new ItemChain(chainName, chainType, icons, startEnabled, loopable, countable, maxCount);
+            return new ItemChain(chain);
         }
     }
 }

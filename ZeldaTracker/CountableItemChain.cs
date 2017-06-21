@@ -8,8 +8,8 @@ namespace ZeldaTracker
 {
     public class CountableItemChain : ItemChain
     {
-        public CountableItemChain(string chainName, string chainType, List<ItemIcon> icons, bool startEnabled = false, bool loopable = false, bool countable = false, int maxCount = 0) 
-            : base(chainName, chainType, icons, startEnabled, loopable, countable, maxCount)
+        public CountableItemChain(JsonItemChain chain) 
+            : base(chain)
         {
             Count = 0;
 

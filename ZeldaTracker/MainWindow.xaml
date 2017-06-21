@@ -21,7 +21,7 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Image Width="32" Height="32" Source="{Binding Icon}" MouseLeftButtonUp="MouseButtonUp" MouseRightButtonUp="MouseButtonUp">
+                        <Image Width="32" Height="32" Source="{Binding Icon}" MouseUp="MouseButtonUp">
                             <Image.Effect>
                                 <effect:GrayscaleEffect DesaturationFactor="{Binding GrayscaleEffect}"></effect:GrayscaleEffect>
                             </Image.Effect>

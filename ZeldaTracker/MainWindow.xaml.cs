@@ -120,14 +120,21 @@ namespace ZeldaTracker
             if (sender.GetType() == typeof(Image))
             {
                 var img = sender as Image;
+                var itemChain = (ItemChain)img.DataContext;
 
-                if (e.ChangedButton == MouseButton.Left)
+                switch (e.ChangedButton)
                 {
-                    ((ItemChain)img.DataContext).NextInChain();
-                }
-                else
-                {
-                    ((ItemChain)img.DataContext).PreviousInChain();
+                    case MouseButton.Left:
+                        itemChain.NextInChain();
+                        break;
+                    case MouseButton.Right:
+                        itemChain.PreviousInChain();
+                        break;
+
+                    // not sure if I want this
+                    //case MouseButton.Middle:
+                    //    itemChain.ResetChain();
+                    //    break;
                 }
             }
         }
@@ -136,16 +143,7 @@ namespace ZeldaTracker
         {
             List<JsonItemChain> chains = JsonConvert.DeserializeObject<List<JsonItemChain>>(File.ReadAllText(@"items.json"));
 
-            foreach(var c in chains)
-            {
-                this.itemChains.Add(ItemChainFactory.BuildItemChain(c.ItemChainName,
-                                                  c.ItemChainType, 
-                                                  c.ItemChain.Select(x => new ItemIcon(x.ItemName, x.IconPath)).ToList(), 
-                                                  c.DefaultEnabled, 
-                                                  c.Loopable, 
-                                                  c.Countable,
-                                                  c.MaxCount));
-            }
+            chains.ForEach((c) => this.itemChains.Add(ItemChainFactory.BuildItemChain(c)));
         }
 
         private void ResetItems()
