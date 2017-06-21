@@ -1,0 +1,783 @@
+﻿[{
+		"ItemChainName": "Armos",
+		"ItemChainType": "Boss",
+		"ItemChain": [{
+				"ItemName": "Armos",
+				"IconPath": "images\/Armos.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Lanmola",
+		"ItemChainType": "Boss",
+		"ItemChain": [{
+				"ItemName": "Lanmola",
+				"IconPath": "images\/Lanmola.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Moldorm",
+		"ItemChainType": "Boss",
+		"ItemChain": [{
+				"ItemName": "Moldorm",
+				"IconPath": "images\/Moldorm.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Agahnim",
+		"ItemChainType": "Boss",
+		"ItemChain": [{
+				"ItemName": "Agahnim",
+				"IconPath": "images\/agahnim.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Tunic",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Green Tunic",
+				"IconPath": "images\/greentunic.png"
+			}, {
+				"ItemName": "Blue Tunic",
+				"IconPath": "images\/bluetunic.png"
+			}, {
+				"ItemName": "Red Tunic",
+				"IconPath": "images\/redtunic.png"
+			}
+		],
+		"DefaultEnabled": true,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Blue Boomerang",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Blue Boomerang",
+				"IconPath": "images\/blueboomerang.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Magic Boomerang",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Magic Boomerang",
+				"IconPath": "images\/magicboomerang.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Bow & Arrows",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Bow",
+				"IconPath": "images\/bow.png"
+			}, {
+				"ItemName": "Bow & Arrow",
+				"IconPath": "images\/bowarrow.png"
+			}, {
+				"ItemName": "Bow & Silver Arrows",
+				"IconPath": "images\/bowsilverarrow.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Bug Net",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Bug Net",
+				"IconPath": "images\/bugnet.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Empty Bottle",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Empty Bottle",
+				"IconPath": "images\/emptybottle.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Bee Bottle",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Bee Bottle",
+				"IconPath": "images\/beebottle.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Red Medicine",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Red Medicine",
+				"IconPath": "images\/redmedicine.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Green Potion",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Green Potion",
+				"IconPath": "images\/greenpotion.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Blue Potion",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Blue Potion",
+				"IconPath": "images\/bluepotion.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Farie in Bottle",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Farie in Bottle",
+				"IconPath": "images\/fariebottle.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Bottle",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Empty Bottle",
+				"IconPath": "images\/emptybottle.png"
+			}, {
+				"ItemName": "Empty Bottle",
+				"IconPath": "images\/emptybottle.png"
+			}, {
+				"ItemName": "One Bottle",
+				"IconPath": "images\/onebottle.png"
+			}, {
+				"ItemName": "Two Bottles",
+				"IconPath": "images\/twobottles.png"
+			}, {
+				"ItemName": "Three Bottles",
+				"IconPath": "images\/threebottles.png"
+			}, {
+				"ItemName": "Four Bottles",
+				"IconPath": "images\/fourbottles.png"
+			}
+		],
+		"DefaultEnabled": true,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Green Pendant",
+		"ItemChainType": "Pendant",
+		"ItemChain": [{
+				"ItemName": "Green Pendant",
+				"IconPath": "images\/greenpendant.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Blue Pendant",
+		"ItemChainType": "Pendant",
+		"ItemChain": [{
+				"ItemName": "Blue Pendant",
+				"IconPath": "images\/bluependant.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Red Pendant",
+		"ItemChainType": "Pendant",
+		"ItemChain": [{
+				"ItemName": "Red Pendant",
+				"IconPath": "images\/redpendant.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Bomb",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Bomb",
+				"IconPath": "images\/bomb.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Bombos",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Bombos",
+				"IconPath": "images\/bombos.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Ether",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Ether",
+				"IconPath": "images\/ether.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Quake",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Quake",
+				"IconPath": "images\/quake.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Book",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Book",
+				"IconPath": "images\/book.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Boots",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Boots",
+				"IconPath": "images\/boots.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Cane of Byrna",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Cane of Byrna",
+				"IconPath": "images\/byrna.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Cane of Somaria",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Cane of Somaria",
+				"IconPath": "images\/somaria.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Chest",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Closed Chest",
+				"IconPath": "images\/closedchest.png"
+			}, {
+				"ItemName": "Opened Chest",
+				"IconPath": "images\/openedchest.png"
+			}
+		],
+		"DefaultEnabled": true,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Crystal",
+		"ItemChainType": "Crystal",
+		"ItemChain": [{
+				"ItemName": "Crystal",
+				"IconPath": "images\/crystal.png"
+			}
+		],
+		"DefaultEnabled": true,
+		"Loopable": false,
+		"Countable": true
+	}, {
+		"ItemChainName": "Crystal 1",
+		"ItemChainType": "Crystal",
+		"ItemChain": [{
+				"ItemName": "Crystal 1",
+				"IconPath": "images\/crystal1.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Crystal 2",
+		"ItemChainType": "Crystal",
+		"ItemChain": [{
+				"ItemName": "Crystal 2",
+				"IconPath": "images\/crystal2.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Crystal 3",
+		"ItemChainType": "Crystal",
+		"ItemChain": [{
+				"ItemName": "Crystal 3",
+				"IconPath": "images\/crystal3.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Crystal 4",
+		"ItemChainType": "Crystal",
+		"ItemChain": [{
+				"ItemName": "Crystal 4",
+				"IconPath": "images\/crystal4.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Crystal 5",
+		"ItemChainType": "Crystal",
+		"ItemChain": [{
+				"ItemName": "Crystal 5",
+				"IconPath": "images\/crystal5.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Crystal 6",
+		"ItemChainType": "Crystal",
+		"ItemChain": [{
+				"ItemName": "Crystal 6",
+				"IconPath": "images\/crystal6.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Crystal 7",
+		"ItemChainType": "Crystal",
+		"ItemChain": [{
+				"ItemName": "Crystal 7",
+				"IconPath": "images\/crystal7.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Sword",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Fighter's Sword",
+				"IconPath": "images\/fightersword.png"
+			}, {
+				"ItemName": "Master Sword",
+				"IconPath": "images\/mastersword.png"
+			}, {
+				"ItemName": "Tempered Sword",
+				"IconPath": "images\/temperedsword.png"
+			}, {
+				"ItemName": "Golden Sword",
+				"IconPath": "images\/goldensword.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Fire Rod",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Fire Rod",
+				"IconPath": "images\/firerod.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Ice Rod",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Ice Rod",
+				"IconPath": "images\/icerod.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Shield",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Shield",
+				"IconPath": "images\/shield.png"
+			}, {
+				"ItemName": "Fire Shield",
+				"IconPath": "images\/fireshield.png"
+			}, {
+				"ItemName": "Mirror Shield",
+				"IconPath": "images\/mirrorshield.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Flippers",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Flippers",
+				"IconPath": "images\/flippers.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Flute",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Flute",
+				"IconPath": "images\/flute.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Shovel",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Shovel",
+				"IconPath": "images\/shovel.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Shovel & Flute",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Shovel & Flute",
+				"IconPath": "images\/shovelandflute.png"
+			}, {
+				"ItemName": "Shovel w\/o Flute",
+				"IconPath": "images\/shovelnoflute.png"
+			}, {
+				"ItemName": "Flute w\/o Shovel",
+				"IconPath": "images\/flutenoshovel.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Magic",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "1\/2 Magic",
+				"IconPath": "images\/halfmagic.png"
+			}, {
+				"ItemName": "1\/4 Magic",
+				"IconPath": "images\/quartermagic.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Heart Container",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Heart Container",
+				"IconPath": "images\/heartcontainer.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": true
+	}, {
+		"ItemChainName": "Piece of Heart",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Piece of Heart",
+				"IconPath": "images\/pieceofheart.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": true
+	}, {
+		"ItemChainName": "Pieces of Heart",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Zero Pieces of Heart",
+				"IconPath": "images\/emptyheartcontainer.png"
+			}, {
+				"ItemName": "One Piece of Heart",
+				"IconPath": "images\/oneheartcontainerpiece.png"
+			}, {
+				"ItemName": "Two Pieces of Heart",
+				"IconPath": "images\/twoheartcontainerpiece.png"
+			}, {
+				"ItemName": "Three Pieces of Heart",
+				"IconPath": "images\/threeheartcontainerpiece.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Hookshot",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Hookshot",
+				"IconPath": "images\/hookshot.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Lamp",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Lamp",
+				"IconPath": "images\/lamp.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Magic Cape",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Magic Cape",
+				"IconPath": "images\/magiccape.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Mushroom",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Mushroom",
+				"IconPath": "images\/mushroom.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Magic Powder",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Magic Powder",
+				"IconPath": "images\/magicpowder.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Magic Hammer",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Magic Hammer",
+				"IconPath": "images\/mchammer.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Palace of Darkness",
+		"ItemChainType": "Dungeon",
+		"ItemChain": [{
+				"ItemName": "Palace of Darkness",
+				"IconPath": "images\/pod.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Swamp Palace",
+		"ItemChainType": "Dungeon",
+		"ItemChain": [{
+				"ItemName": "Swamp Palace",
+				"IconPath": "images\/swamppalace.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Skull Woods",
+		"ItemChainType": "Dungeon",
+		"ItemChain": [{
+				"ItemName": "Skull Woods",
+				"IconPath": "images\/skullwoods.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Thieves'Town",
+		"ItemChainType": "Dungeon",
+		"ItemChain": [{
+				"ItemName": "Thieves'Town",
+				"IconPath": "images\/thievestown.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Ice Palace",
+		"ItemChainType": "Dungeon",
+		"ItemChain": [{
+				"ItemName": "Ice Palace",
+				"IconPath": "images\/icepalace.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Misery Mire",
+		"ItemChainType": "Dungeon",
+		"ItemChain": [{
+				"ItemName": "Misery Mire",
+				"IconPath": "images\/mire.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Turtle Rock",
+		"ItemChainType": "Dungeon",
+		"ItemChain": [{
+				"ItemName": "Turtle Rock",
+				"IconPath": "images\/turtlerock.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Mirror",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Mirror",
+				"IconPath": "images\/mirror.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Moon Pearl",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Moon Pearl",
+				"IconPath": "images\/moonpearl.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Master Sword Pedestal",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Master Sword Pedestal",
+				"IconPath": "images\/pedestal.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}, {
+		"ItemChainName": "Gloves",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Power Gloves",
+				"IconPath": "images\/powerglove.png"
+			}, {
+				"ItemName": "Titan's Mitt",
+				"IconPath": "images\/titanmitts.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false
+	}
+]

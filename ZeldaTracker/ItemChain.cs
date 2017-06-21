@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,13 +11,15 @@ namespace ZeldaTracker
 {
     public class ItemChain : INotifyPropertyChanged
     {
-        private const double UnsetValue = 0.0;
-        private const double SetValue = 1.0;
+        private const double ItemUnsetValue = 0.0;
+        private const double ItemSetValue = 1.0;
 
         private int _currentIndex = 0;
         private List<InventoryItem> _itemChain = new List<InventoryItem>();
         private bool _isUnset = true;
         private bool _defaultEnabled = false;
+        private bool _loopable = false;
+        private bool _countable = false;
 
         public BitmapImage Icon
         {
@@ -26,26 +29,26 @@ namespace ZeldaTracker
             }
         }
 
-        public double GrayscaleEffect { get; set; } = UnsetValue;
+        public double GrayscaleEffect { get; set; } = ItemUnsetValue;
         public string ItemChainName { get; set; }
+        public string ItemChainType { get; set; }
 
-        public ItemChain(string chainName, string imagePath, bool startEnabled=false)
-            :this(chainName, new[] { imagePath }, startEnabled )
-        {
-        }
-
-        public ItemChain(string chainName, string[] imagePaths, bool startEnabled = false)
+        public ItemChain(string chainName, string chainType, List<ItemIcon> icons, bool startEnabled = false, bool loopable = false, bool countable = false)
         {
             this.ItemChainName = chainName;
-            _defaultEnabled = startEnabled;
-            if (startEnabled)
+            this.ItemChainType = chainType;
+            this._defaultEnabled = startEnabled;
+            this._loopable = loopable;
+            this._countable = countable;
+
+            if(startEnabled)
             {
                 _isUnset = false;
-                GrayscaleEffect = SetValue;
+                GrayscaleEffect = ItemSetValue;
             }
-            foreach(string s in imagePaths)
+            foreach(var i in icons)
             {
-                this._itemChain.Add(new InventoryItem(s, s));
+                this._itemChain.Add(new InventoryItem(i.Name, i.ImagePath));
             }
         }
 
@@ -57,7 +60,7 @@ namespace ZeldaTracker
                 RaisePropertyChanged("Icon");
             }
             _isUnset = false;
-            GrayscaleEffect = SetValue;
+            GrayscaleEffect = ItemSetValue;
             RaisePropertyChanged("GrayscaleEffect");
         }
 
@@ -66,7 +69,7 @@ namespace ZeldaTracker
             if (_currentIndex == 0 && _isUnset == false && _defaultEnabled != true)
             {
                 _isUnset = true;
-                GrayscaleEffect = UnsetValue;
+                GrayscaleEffect = ItemUnsetValue;
                 RaisePropertyChanged("GrayscaleEffect");
             }
             if (_currentIndex > 0)
@@ -81,7 +84,7 @@ namespace ZeldaTracker
             if (_defaultEnabled != true)
             {
                 _isUnset = true;
-                GrayscaleEffect = UnsetValue;
+                GrayscaleEffect = ItemUnsetValue;
                 RaisePropertyChanged("GrayscaleEffect");
             }
             _currentIndex = 0;
