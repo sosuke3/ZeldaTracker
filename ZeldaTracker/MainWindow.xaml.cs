@@ -144,6 +144,17 @@ namespace ZeldaTracker
             List<JsonItemChain> chains = JsonConvert.DeserializeObject<List<JsonItemChain>>(File.ReadAllText(@"items.json"));
 
             chains.ForEach((c) => this.itemChains.Add(ItemChainFactory.BuildItemChain(c)));
+
+            try
+            {
+                var config = new Configuration();
+                config.DisplayOrder = new List<string>() { "Hookshot", "Mirror", "Blue Boomerang", "Tunic", "Sword" };
+                //this.itemChains = this.itemChains.OrderBySequence<ItemChain, string>(config.DisplayOrder, t => t.ItemChainName).ToList();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Error in configuration. " + ex.Message, "Config Error");
+            }
         }
 
         private void ResetItems()

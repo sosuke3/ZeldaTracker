@@ -63,9 +63,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Configuration.cs" />
     <Compile Include="CountableItemChain.cs" />
     <Compile Include="DefaultEnabledItemChain.cs" />
     <Compile Include="ItemChainFactory.cs" />
+    <Compile Include="ListExtension.cs" />
     <Compile Include="LoopableItemChain.cs" />
     <Compile Include="StrokeTextBlock.cs" />
     <Page Include="MainWindow.xaml">
