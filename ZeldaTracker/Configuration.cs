@@ -6,12 +6,23 @@ using System.Threading.Tasks;
 
 namespace ZeldaTracker
 {
-    public class Configuration
+    public class Configuration : ICloneable
     {
-        public List<string> DisplayOrder { get; set; }
+        public List<string> DisplayOrder { get; set; } = new List<string>();
         public int WindowWidth { get; set; }
         public int WindowHeight { get; set; }
         public int WindowX { get; set; }
         public int WindowY { get; set; }
+
+        public object Clone()
+        {
+            var copy = new Configuration();
+            copy.DisplayOrder = this.DisplayOrder.ToList();
+            copy.WindowHeight = this.WindowHeight;
+            copy.WindowWidth = this.WindowWidth;
+            copy.WindowX = this.WindowX;
+            copy.WindowY = this.WindowY;
+            return copy;
+        }
     }
 }

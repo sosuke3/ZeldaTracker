@@ -30,10 +30,12 @@ namespace ZeldaTracker
     {
         public List<InventoryItem> items { get; set; } = new List<InventoryItem>();
         public List<ItemChain> itemChains { get; set; } = new List<ItemChain>();
+        public Configuration Config { get; set; } = new Configuration();
 
         public MainWindow()
         {
             LoadItems();
+            LoadConfig();
 
             InitializeComponent();
 
@@ -61,7 +63,7 @@ namespace ZeldaTracker
         #region Title Bar Context Menu Stuff
         // The constants we'll use to identify our custom system menu items
         public const Int32 _ResetMenuID = 1000;
-        //public const Int32 _AboutSysMenuID = 1001;
+        public const Int32 _ConfigMenuID = 1001;
 
         /// <summary>
         /// This is the Win32 Interop Handle for this Window
@@ -82,7 +84,7 @@ namespace ZeldaTracker
             /// Create our new System Menu items just before the Close menu item
             InsertMenu(systemMenuHandle, 5, MF_BYPOSITION | MF_SEPARATOR, 0, string.Empty); // <-- Add a menu seperator
             InsertMenu(systemMenuHandle, 6, MF_BYPOSITION, _ResetMenuID, "Reset Tracker");
-            //InsertMenu(systemMenuHandle, 7, MF_BYPOSITION, _AboutSysMenuID, "About...");
+            InsertMenu(systemMenuHandle, 7, MF_BYPOSITION, _ConfigMenuID, "Config");
 
             // Attach our WndProc handler to this Window
             HwndSource source = HwndSource.FromHwnd(this.Handle);
@@ -101,10 +103,15 @@ namespace ZeldaTracker
                         ResetItems();
                         handled = true;
                         break;
-                    //case _AboutSysMenuID:
-                    //    MessageBox.Show("\"About\" was clicked");
-                    //    handled = true;
-                    //    break;
+                    case _ConfigMenuID:
+                        ConfigDialog dialog = new ConfigDialog(this.Config);
+                        if(dialog.ShowDialog() == true)
+                        {
+                            // save config?
+                        }
+                        //MessageBox.Show("\"About\" was clicked");
+                        handled = true;
+                        break;
                 }
             }
 
@@ -144,17 +151,60 @@ namespace ZeldaTracker
             List<JsonItemChain> chains = JsonConvert.DeserializeObject<List<JsonItemChain>>(File.ReadAllText(@"items.json"));
 
             chains.ForEach((c) => this.itemChains.Add(ItemChainFactory.BuildItemChain(c)));
+        }
 
+        private void LoadConfig()
+        {
             try
             {
-                var config = new Configuration();
-                config.DisplayOrder = new List<string>() { "Hookshot", "Mirror", "Blue Boomerang", "Tunic", "Sword" };
-                //this.itemChains = this.itemChains.OrderBySequence<ItemChain, string>(config.DisplayOrder, t => t.ItemChainName).ToList();
+                this.Config = JsonConvert.DeserializeObject<Configuration>(File.ReadAllText(@"config.json"));
             }
             catch(Exception ex)
             {
+                MessageBox.Show("Invalid configuration file. Loading defaults");
+                this.Config = MakeDefaultConfiguration();
+            }
+
+            MoveAndResizeWindow();
+            ReorderItems();
+        }
+
+        private void ReorderItems()
+        {
+            try
+            {
+                this.itemChains = this.itemChains.OrderBySequence<ItemChain, string>(this.Config.DisplayOrder, t => t.ItemChainName).ToList();
+            }
+            catch (Exception ex)
+            {
                 MessageBox.Show("Error in configuration. " + ex.Message, "Config Error");
             }
+
+        }
+
+        private void MoveAndResizeWindow()
+        {
+            this.Height = this.Config.WindowHeight;
+            this.Width = this.Config.WindowWidth;
+            if(this.Config.WindowX > -1)
+            {
+
+            }
+            if(this.Config.WindowY > -1)
+            {
+
+            }
+        }
+
+        private Configuration MakeDefaultConfiguration()
+        {
+            var ret = new Configuration();
+            ret.DisplayOrder = this.itemChains.Select(i => i.ItemChainName).ToList();
+            ret.WindowHeight = 380;
+            ret.WindowWidth = 244;
+            ret.WindowX = -1;
+            ret.WindowY = -1;
+            return ret;
         }
 
         private void ResetItems()
