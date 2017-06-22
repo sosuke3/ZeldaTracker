@@ -9,6 +9,8 @@ select ItemChainName,
 	   ) as ItemChain,
 	   DefaultEnabled,
 	   Loopable,
-	   Countable
+	   Countable,
+	   MaxCount
     from ItemChain
+    order by ItemChain.SortOrder
     for json path

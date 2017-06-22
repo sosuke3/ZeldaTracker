@@ -36,7 +36,7 @@ namespace ZeldaTracker
         private void SaveButtonClick(object sender, RoutedEventArgs e)
         {
             File.WriteAllText(@"config.json", JsonConvert.SerializeObject(_config));
-            // TODO: save to file
+            this.DialogResult = true;
         }
     }
 }

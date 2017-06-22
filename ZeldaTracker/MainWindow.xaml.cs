@@ -107,6 +107,8 @@ namespace ZeldaTracker
                         ConfigDialog dialog = new ConfigDialog(this.Config);
                         if(dialog.ShowDialog() == true)
                         {
+                            this.Config = dialog.Config;
+                            ReorderItems();
                             // save config?
                         }
                         //MessageBox.Show("\"About\" was clicked");

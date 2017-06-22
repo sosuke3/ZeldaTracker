@@ -28,6 +28,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="80" Height="24" Margin="0,0,90,0" Content="Cancel" IsCancel="True"></Button>
         <Button HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="80" Height="24" Content="Save" Click="SaveButtonClick"></Button>
     </Grid>
 </Window>
