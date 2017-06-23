@@ -76,6 +76,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Helpers.cs" />
     <Compile Include="InventoryItem_Tests.cs" />
     <Compile Include="ItemChain_Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

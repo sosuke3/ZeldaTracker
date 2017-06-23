@@ -48,7 +48,18 @@ namespace ZeldaTracker
 
             foreach (var i in chain.ItemChain)
             {
-                this._itemChain.Add(new InventoryItem(i.ItemName, i.IconPath));
+                InventoryItem ii = new InventoryItem(i.ItemName, i.IconPath);
+                try
+                {
+                    ii.LoadImage();
+                }
+                catch(ImageNotFoundException infe)
+                {
+                    this._defaultEnabled = true;
+                    this._isUnset = false;
+                    this.GrayscaleEffect = ItemSetValue;
+                }
+                this._itemChain.Add(ii);
             }
         }
 

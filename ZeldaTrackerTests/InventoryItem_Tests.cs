@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using Xunit;
 using ZeldaTracker;
+using ZeldaTrackerTests;
 
 namespace ZeldaTrackerTests
 {
@@ -15,7 +16,7 @@ namespace ZeldaTrackerTests
         public InventoryItem_Tests()
         {
             PackUriHelper.Create(new Uri("reliable://0"));
-            new FrameworkElement();
+            var junk = new FrameworkElement();
             System.Windows.Application.ResourceAssembly = typeof(ZeldaTracker.App).Assembly;
         }
 
@@ -24,6 +25,7 @@ namespace ZeldaTrackerTests
         {
             // Arrange
             var item = new InventoryItem("test", @"images/test.png");
+            item.LoadImage();
 
             // Act
             await Task.Yield();
@@ -37,6 +39,7 @@ namespace ZeldaTrackerTests
         {
             // Arrange
             var item = new InventoryItem("test", @"images/test.png");
+            item.LoadImage();
 
             // Act
             await Task.Yield();
@@ -49,15 +52,15 @@ namespace ZeldaTrackerTests
         [WpfFact]
         public async Task Fail_to_load_image_and_load_not_found_image()
         {
-            // Arrange
-            var item = new InventoryItem("test", @"xxxx");
-
-            // Act
             await Task.Yield();
 
+            // Arrange
+            var item = new InventoryItem("test", @"xxxx");
+            Assert.Throws<ImageNotFoundException>(() => item.LoadImage());
+            
+
+            // Act
             // Assert
-            Assert.Equal(64, item.Icon.PixelWidth);
-            Assert.Equal(64, item.Icon.PixelHeight);
         }
     }
 }
