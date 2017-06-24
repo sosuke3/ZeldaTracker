@@ -42,6 +42,10 @@ namespace ZeldaTracker
             this.Loaded += Window1_Loaded;
 
             DataContext = this;
+
+            MapsWindow maps = new MapsWindow();
+            maps.DataContext = this;
+            maps.Show();
         }
 
         #region Win32 API Stuff

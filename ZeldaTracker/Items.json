@@ -17,6 +17,18 @@
 		"Countable": false,
 		"MaxCount": 0
 	}, {
+		"ItemChainName": "Silver Arrows",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "Silver Arrows",
+				"IconPath": "images\/silverarrows.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false,
+		"MaxCount": 0
+	}, {
 		"ItemChainName": "Blue Boomerang",
 		"ItemChainType": "Item",
 		"ItemChain": [{
@@ -350,21 +362,6 @@
 		"Countable": false,
 		"MaxCount": 0
 	}, {
-		"ItemChainName": "Magic",
-		"ItemChainType": "Item",
-		"ItemChain": [{
-				"ItemName": "1\/2 Magic",
-				"IconPath": "images\/halfmagic.png"
-			}, {
-				"ItemName": "1\/4 Magic",
-				"IconPath": "images\/quartermagic.png"
-			}
-		],
-		"DefaultEnabled": false,
-		"Loopable": false,
-		"Countable": false,
-		"MaxCount": 0
-	}, {
 		"ItemChainName": "Heart Container",
 		"ItemChainType": "Item",
 		"ItemChain": [{
@@ -388,6 +385,21 @@
 		"Loopable": false,
 		"Countable": true,
 		"MaxCount": 24
+	}, {
+		"ItemChainName": "Magic",
+		"ItemChainType": "Item",
+		"ItemChain": [{
+				"ItemName": "1\/2 Magic",
+				"IconPath": "images\/halfmagic.png"
+			}, {
+				"ItemName": "1\/4 Magic",
+				"IconPath": "images\/quartermagic.png"
+			}
+		],
+		"DefaultEnabled": false,
+		"Loopable": false,
+		"Countable": false,
+		"MaxCount": 0
 	}, {
 		"ItemChainName": "Boots",
 		"ItemChainType": "Item",

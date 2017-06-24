@@ -72,6 +72,9 @@
     <Compile Include="ItemChainFactory.cs" />
     <Compile Include="ListExtension.cs" />
     <Compile Include="LoopableItemChain.cs" />
+    <Compile Include="MapsWindow.xaml.cs">
+      <DependentUpon>MapsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MissingBitmapImage.cs" />
     <Compile Include="StrokeTextBlock.cs" />
     <Page Include="ConfigDialog.xaml">
@@ -94,6 +97,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MapsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -113,6 +120,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Items.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -128,266 +138,281 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\agahnim.png">
+    <None Include="images\agahnim.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\Armos.png">
+    </None>
+    <None Include="images\Armos.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\beebottle.png">
+    </None>
+    <None Include="images\beebottle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\blueboomerang.png">
+    </None>
+    <None Include="images\blueboomerang.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\bluependant.png">
+    </None>
+    <None Include="images\bluependant.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\bluepotion.png">
+    </None>
+    <None Include="images\bluepotion.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\bluetunic.png">
+    </None>
+    <None Include="images\bluetunic.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\bomb.png">
+    </None>
+    <None Include="images\bomb.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\bombos.png">
+    </None>
+    <None Include="images\bombos.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\book.png">
+    </None>
+    <None Include="images\book.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\boots.png">
+    </None>
+    <None Include="images\boots.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\bow.png">
+    </None>
+    <None Include="images\bow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\bowarrow.png">
+    </None>
+    <None Include="images\bowarrow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\bowsilverarrow.png">
+    </None>
+    <None Include="images\bowsilverarrow.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\bugnet.png">
+    </None>
+    <None Include="images\bugnet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\byrna.png">
+    </None>
+    <None Include="images\byrna.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\closedchest.png">
+    </None>
+    <None Include="images\closedchest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\crystal.png">
+    </None>
+    <None Include="images\crystal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\crystal1.png">
+    </None>
+    <None Include="images\crystal1.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\crystal2.png">
+    </None>
+    <None Include="images\crystal2.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\crystal3.png">
+    </None>
+    <None Include="images\crystal3.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\crystal4.png">
+    </None>
+    <None Include="images\crystal4.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\crystal5.png">
+    </None>
+    <None Include="images\crystal5.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\crystal6.png">
+    </None>
+    <None Include="images\crystal6.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\crystal7.png">
+    </None>
+    <None Include="images\crystal7.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\emptybottle.png">
+    </None>
+    <None Include="images\emptybottle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\emptyheartcontainer.png">
+    </None>
+    <None Include="images\emptyheartcontainer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\ether.png">
+    </None>
+    <None Include="images\ether.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\fariebottle.png">
+    </None>
+    <None Include="images\fariebottle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\fightersword.png">
+    </None>
+    <None Include="images\fightersword.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\firerod.png">
+    </None>
+    <None Include="images\firerod.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\fireshield.png">
+    </None>
+    <None Include="images\fireshield.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\flippers.png">
+    </None>
+    <None Include="images\flippers.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\flute.png">
+    </None>
+    <None Include="images\flute.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\flutenoshovel.png">
+    </None>
+    <None Include="images\flutenoshovel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\fourbottles.png">
+    </None>
+    <None Include="images\fourbottles.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\goldensword.png">
+    </None>
+    <None Include="images\goldensword.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\greenpendant.png">
+    </None>
+    <None Include="images\greenpendant.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\greenpotion.png">
+    </None>
+    <None Include="images\greenpotion.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\greentunic.png">
+    </None>
+    <None Include="images\greentunic.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\halfmagic.png">
+    </None>
+    <None Include="images\halfmagic.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\heartcontainer.png">
+    </None>
+    <None Include="images\heartcontainer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\hookshot.png">
+    </None>
+    <None Include="images\hookshot.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\icepalace.png">
+    </None>
+    <None Include="images\icepalace.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\icerod.png">
+    </None>
+    <None Include="images\icerod.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\lamp.png">
+    </None>
+    <None Include="images\lamp.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\Lanmola.png">
+    </None>
+    <None Include="images\Lanmola.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\magicboomerang.png">
+    </None>
+    <None Include="images\magicboomerang.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\magiccape.png">
+    </None>
+    <None Include="images\magiccape.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\magicpowder.png">
+    </None>
+    <None Include="images\magicpowder.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\mastersword.png">
+    </None>
+    <None Include="images\mastersword.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\mchammer.png">
+    </None>
+    <None Include="images\mchammer.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\mire.png">
+    </None>
+    <None Include="images\mire.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\mirror.png">
+    </None>
+    <None Include="images\mirror.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\mirrorshield.png">
+    </None>
+    <None Include="images\mirrorshield.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\Moldorm.png">
+    </None>
+    <None Include="images\Moldorm.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\moonpearl.png">
+    </None>
+    <None Include="images\moonpearl.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\mushroom.png">
+    </None>
+    <None Include="images\mushroom.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\onebottle.png">
+    </None>
+    <None Include="images\onebottle.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\oneheartcontainerpiece.png">
+    </None>
+    <None Include="images\oneheartcontainerpiece.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\openedchest.png">
+    </None>
+    <None Include="images\openedchest.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\pedestal.png">
+    </None>
+    <None Include="images\pedestal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\pieceofheart.png">
+    </None>
+    <None Include="images\pieceofheart.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\pod.png">
+    </None>
+    <None Include="images\pod.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\powerglove.png">
+    </None>
+    <None Include="images\powerglove.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\quake.png">
+    </None>
+    <None Include="images\quake.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\quartermagic.png">
+    </None>
+    <None Include="images\quartermagic.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\redmedicine.png">
+    </None>
+    <None Include="images\redmedicine.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\redpendant.png">
+    </None>
+    <None Include="images\redpendant.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\redtunic.png">
+    </None>
+    <None Include="images\redtunic.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\shield.png">
+    </None>
+    <None Include="images\shield.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\shovel.png">
+    </None>
+    <None Include="images\shovel.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\shovelandflute.png">
+    </None>
+    <None Include="images\shovelandflute.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\shovelnoflute.png">
+    </None>
+    <None Include="images\shovelnoflute.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\skullwoods.png">
+    </None>
+    <None Include="images\skullwoods.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\somaria.png">
+    </None>
+    <None Include="images\somaria.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\swamppalace.png">
+    </None>
+    <None Include="images\swamppalace.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\temperedsword.png">
+    </None>
+    <None Include="images\temperedsword.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\thievestown.png">
+    </None>
+    <None Include="images\thievestown.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\threebottles.png">
+    </None>
+    <None Include="images\threebottles.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\threeheartcontainerpiece.png">
+    </None>
+    <None Include="images\threeheartcontainerpiece.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\titanmitts.png">
+    </None>
+    <None Include="images\titanmitts.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\turtlerock.png">
+    </None>
+    <None Include="images\turtlerock.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\twobottles.png">
+    </None>
+    <None Include="images\twobottles.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="images\twoheartcontainerpiece.png">
+    </None>
+    <None Include="images\twoheartcontainerpiece.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="missingicon.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\silverarrows.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\lightworld.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\darkworld.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
