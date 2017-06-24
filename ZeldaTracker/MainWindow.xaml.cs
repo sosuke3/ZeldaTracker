@@ -51,7 +51,13 @@ namespace ZeldaTracker
 
         [DllImport("user32.dll")]
         private static extern bool InsertMenu(IntPtr hMenu, Int32 wPosition, Int32 wFlags, Int32 wIDNewItem, string lpNewItem);
-        
+
+        [DllImport("User32")]
+        private static extern int GetMenuItemCount(IntPtr hWnd);
+
+        [DllImport("User32")]
+        private static extern int RemoveMenu(IntPtr hMenu, int nPosition, int wFlags);
+
         /// Define our Constants we will use
         public const Int32 WM_SYSCOMMAND = 0x112;
         public const Int32 MF_SEPARATOR = 0x800;
@@ -80,6 +86,11 @@ namespace ZeldaTracker
         {
             /// Get the Handle for the Forms System Menu
             IntPtr systemMenuHandle = GetSystemMenu(this.Handle, false);
+
+            int num_menu_items = GetMenuItemCount(systemMenuHandle);
+            RemoveMenu(systemMenuHandle, 4, MF_BYPOSITION); // maximize
+            RemoveMenu(systemMenuHandle, 3, MF_BYPOSITION); // minimize
+            RemoveMenu(systemMenuHandle, 0, MF_BYPOSITION); // restore
 
             /// Create our new System Menu items just before the Close menu item
             InsertMenu(systemMenuHandle, 5, MF_BYPOSITION | MF_SEPARATOR, 0, string.Empty); // <-- Add a menu seperator
