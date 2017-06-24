@@ -9,7 +9,9 @@
     <Grid>
         <TabControl x:Name="tabControl" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,30" >
             <TabItem Header="General">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <CheckBox Content="Show Map Windows on Startup" IsChecked="{Binding ShowMapWindowsOnStartup}"></CheckBox>
+                </Grid>
             </TabItem>
             <TabItem Header="Item Order">
                 <Grid Background="#FFE5E5E5">

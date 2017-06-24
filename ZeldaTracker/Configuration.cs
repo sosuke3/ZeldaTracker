@@ -13,6 +13,7 @@ namespace ZeldaTracker
         public int WindowHeight { get; set; }
         public int WindowX { get; set; }
         public int WindowY { get; set; }
+        public bool ShowMapWindowsOnStartup { get; set; }
 
         public object Clone()
         {
@@ -22,6 +23,7 @@ namespace ZeldaTracker
             copy.WindowWidth = this.WindowWidth;
             copy.WindowX = this.WindowX;
             copy.WindowY = this.WindowY;
+            copy.ShowMapWindowsOnStartup = this.ShowMapWindowsOnStartup;
             return copy;
         }
     }

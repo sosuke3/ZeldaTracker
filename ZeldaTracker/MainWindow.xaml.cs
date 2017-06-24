@@ -32,6 +32,8 @@ namespace ZeldaTracker
         public List<ItemChain> itemChains { get; set; } = new List<ItemChain>();
         public Configuration Config { get; set; } = new Configuration();
 
+        public MapsWindow mapWindow;
+
         public MainWindow()
         {
             LoadItems();
@@ -43,9 +45,10 @@ namespace ZeldaTracker
 
             DataContext = this;
 
-            MapsWindow maps = new MapsWindow();
-            maps.DataContext = this;
-            maps.Show();
+            if (Config.ShowMapWindowsOnStartup)
+            {
+                ShowMapWindow();
+            }
         }
 
         #region Win32 API Stuff
@@ -74,6 +77,7 @@ namespace ZeldaTracker
         // The constants we'll use to identify our custom system menu items
         public const Int32 _ResetMenuID = 1000;
         public const Int32 _ConfigMenuID = 1001;
+        public const Int32 _MapWindowMenuID = 1002;
 
         /// <summary>
         /// This is the Win32 Interop Handle for this Window
@@ -100,10 +104,13 @@ namespace ZeldaTracker
             InsertMenu(systemMenuHandle, 5, MF_BYPOSITION | MF_SEPARATOR, 0, string.Empty); // <-- Add a menu seperator
             InsertMenu(systemMenuHandle, 6, MF_BYPOSITION, _ResetMenuID, "Reset Tracker");
             InsertMenu(systemMenuHandle, 7, MF_BYPOSITION, _ConfigMenuID, "Config");
+            InsertMenu(systemMenuHandle, 8, MF_BYPOSITION, _MapWindowMenuID, "Show Map Window");
 
             // Attach our WndProc handler to this Window
             HwndSource source = HwndSource.FromHwnd(this.Handle);
             source.AddHook(new HwndSourceHook(WndProc));
+
+            this.HideMinimizeAndMaximizeButtons();
         }
 
         private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
@@ -126,7 +133,10 @@ namespace ZeldaTracker
                             ReorderItems();
                             // save config?
                         }
-                        //MessageBox.Show("\"About\" was clicked");
+                        handled = true;
+                        break;
+                    case _MapWindowMenuID:
+                        ShowMapWindow();
                         handled = true;
                         break;
                 }
@@ -135,6 +145,22 @@ namespace ZeldaTracker
             return IntPtr.Zero;
         }
         #endregion
+
+        private void ShowMapWindow()
+        {
+            if (mapWindow == null)
+            {
+                mapWindow = new MapsWindow();
+                mapWindow.Closed += (a, b) => mapWindow = null;
+                mapWindow.DataContext = this;
+                mapWindow.Show();
+            }
+            else
+            {
+                mapWindow.Show();
+            }
+
+        }
 
         private void MouseButtonUp(object sender, MouseButtonEventArgs e)
         {

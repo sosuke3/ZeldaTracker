@@ -22,6 +22,14 @@ namespace ZeldaTracker
         public MapsWindow()
         {
             InitializeComponent();
+
+            this.Loaded += MapsWindow_Loaded;
+
+        }
+
+        private void MapsWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.HideMinimizeAndMaximizeButtons();
         }
     }
 }

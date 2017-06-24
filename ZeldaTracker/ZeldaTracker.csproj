@@ -77,6 +77,7 @@
     </Compile>
     <Compile Include="MissingBitmapImage.cs" />
     <Compile Include="StrokeTextBlock.cs" />
+    <Compile Include="WindowExtensions.cs" />
     <Page Include="ConfigDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
