@@ -10,7 +10,7 @@ namespace ZeldaTracker
     {
         public string ItemChainName { get; set; }
         public string ItemChainType { get; set; }
-        public List<JsonItem> ItemChain { get; set; }
+        public List<JsonItem> ItemChain { get; set; } = new List<JsonItem>();
         public bool DefaultEnabled { get; set; }
         public bool Loopable { get; set; }
         public bool Countable { get; set; }

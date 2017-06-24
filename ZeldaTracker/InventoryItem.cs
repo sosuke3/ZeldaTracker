@@ -34,7 +34,7 @@ namespace ZeldaTracker
 
                 // TODO: log it or something
                 var msg = "Image '" + _path + "' could not be loaded. Loaded missing image icon instead. Fix your 'items.json'.";
-                MessageBox.Show(msg); // eww but what's a boy to do?
+                //MessageBox.Show(msg); // eww but what's a boy to do?
                 throw new ImageNotFoundException(msg);
             }
         }
