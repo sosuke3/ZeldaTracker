@@ -23,6 +23,8 @@ namespace ZeldaTracker
         {
             InitializeComponent();
 
+            this.LightWorldMap.Source = new BitmapImage(new Uri(System.IO.Path.Combine(Environment.CurrentDirectory, @"images/lightworld.png")));
+            this.DarkWorldMap.Source = new BitmapImage(new Uri(System.IO.Path.Combine(Environment.CurrentDirectory, @"images/darkworld.png")));
             this.Loaded += MapsWindow_Loaded;
 
         }

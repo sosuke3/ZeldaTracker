@@ -12,10 +12,10 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-            <Image Source="images/lightworld.png"></Image>
+            <Image Name="LightWorldMap" Source="images/lightworld.png"></Image>
         </Grid>
         <Grid Grid.Column="1">
-            <Image Source="images/darkworld.png"></Image>
+            <Image Name="DarkWorldMap" Source="images/darkworld.png"></Image>
         </Grid>
     </Grid>
 </Window>
