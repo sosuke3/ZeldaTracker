@@ -85,6 +85,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Tracker\Tracker.csproj">
+      <Project>{c5939327-10ce-48fc-9bda-bc9dcd65b56e}</Project>
+      <Name>Tracker</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ZeldaTracker\ZeldaTracker.csproj">
       <Project>{c4b9651c-dbb5-49c7-84bd-d7ad6b35c60a}</Project>
       <Name>ZeldaTracker</Name>

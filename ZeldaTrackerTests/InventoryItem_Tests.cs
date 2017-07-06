@@ -8,6 +8,7 @@ using System.Windows;
 using Xunit;
 using ZeldaTracker;
 using ZeldaTrackerTests;
+using Tracker;
 
 namespace ZeldaTrackerTests
 {

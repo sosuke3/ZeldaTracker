@@ -66,16 +66,9 @@
     <Compile Include="ConfigDialog.xaml.cs">
       <DependentUpon>ConfigDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Configuration.cs" />
-    <Compile Include="CountableItemChain.cs" />
-    <Compile Include="DefaultEnabledItemChain.cs" />
-    <Compile Include="ItemChainFactory.cs" />
-    <Compile Include="ListExtension.cs" />
-    <Compile Include="LoopableItemChain.cs" />
     <Compile Include="MapsWindow.xaml.cs">
       <DependentUpon>MapsWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MissingBitmapImage.cs" />
     <Compile Include="StrokeTextBlock.cs" />
     <Compile Include="WindowExtensions.cs" />
     <Page Include="ConfigDialog.xaml">
@@ -90,10 +83,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="InventoryItem.cs" />
-    <Compile Include="ItemChain.cs" />
-    <Compile Include="ItemIcon.cs" />
-    <Compile Include="JsonItem.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -414,6 +403,12 @@
     <None Include="images\darkworld.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Tracker\Tracker.csproj">
+      <Project>{c5939327-10ce-48fc-9bda-bc9dcd65b56e}</Project>
+      <Name>Tracker</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
