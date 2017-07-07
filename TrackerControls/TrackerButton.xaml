@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="TrackerControls.TrackerButton"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TrackerControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="64" d:DesignWidth="64">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Image Name="MainImage" Grid.ColumnSpan="2" Grid.RowSpan="2"></Image>
+        <Image Name="TopLeftImage" Grid.Column="0" Grid.Row="0"></Image>
+        <Image Name="TopRightImage" Grid.Column="1" Grid.Row="0"></Image>
+        <Image Name="BottomLeftImage" Grid.Column="0" Grid.Row="1"></Image>
+        <Image Name="BottomRightImage" Grid.Column="1" Grid.Row="1"></Image>
+    </Grid>
+</UserControl>

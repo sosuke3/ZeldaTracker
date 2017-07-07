@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace Tracker
 {
@@ -17,14 +18,14 @@ namespace Tracker
 
         public object Clone()
         {
-            var copy = new Configuration();
-            copy.DisplayOrder = this.DisplayOrder.ToList();
-            copy.WindowHeight = this.WindowHeight;
-            copy.WindowWidth = this.WindowWidth;
-            copy.WindowX = this.WindowX;
-            copy.WindowY = this.WindowY;
-            copy.ShowMapWindowsOnStartup = this.ShowMapWindowsOnStartup;
-            return copy;
+            // be lazy and use AutoMapper to clone
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Configuration, Configuration>();
+            });
+
+            IMapper mapper = config.CreateMapper();
+            return mapper.Map<Configuration, Configuration>(this);
         }
     }
 }
