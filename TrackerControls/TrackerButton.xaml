@@ -16,14 +16,16 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Name="MainImageControl" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="{Binding MainImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}">
+        <Image Name="MainImageControl" Grid.ColumnSpan="2" Grid.RowSpan="2" 
+               Source="{Binding Icon}"
+               MouseUp="MainImageControl_MouseUp">
             <Image.Effect>
                 <effect:GrayscaleEffect DesaturationFactor="{Binding GrayscaleEffect}"></effect:GrayscaleEffect>
             </Image.Effect>
         </Image>
-        <Image Name="TopLeftImageControl" Grid.Column="0" Grid.Row="0" Source="{Binding TopLeftImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}"></Image>
-        <Image Name="TopRightImageControl" Grid.Column="1" Grid.Row="0" Source="{Binding TopRightImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}"></Image>
-        <Image Name="BottomLeftImageControl" Grid.Column="0" Grid.Row="1" Source="{Binding BottomLeftImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}"></Image>
-        <Image Name="BottomRightImageControl" Grid.Column="1" Grid.Row="1" Source="{Binding BottomRightImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}"></Image>
+        <Image Name="TopLeftImageControl" Grid.Column="0" Grid.Row="0" Source="{Binding TopLeftIcon}"></Image>
+        <Image Name="TopRightImageControl" Grid.Column="1" Grid.Row="0" Source="{Binding TopRightIcon}"></Image>
+        <Image Name="BottomLeftImageControl" Grid.Column="0" Grid.Row="1" Source="{Binding BottomLeftIcon}"></Image>
+        <Image Name="BottomRightImageControl" Grid.Column="1" Grid.Row="1" Source="{Binding BottomRightIcon}"></Image>
     </Grid>
 </UserControl>
