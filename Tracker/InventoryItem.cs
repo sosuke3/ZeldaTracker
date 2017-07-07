@@ -15,6 +15,7 @@ namespace Tracker
         public string ItemName { get; set; }
 
         private string _path { get; set; }
+        public string IconPath { get { return _path; } }
 
         public InventoryItem(string name, string path)
         {

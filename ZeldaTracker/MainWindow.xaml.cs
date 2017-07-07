@@ -168,10 +168,11 @@ namespace ZeldaTracker
             //e.ChangedButton;
             //((Image)sender).Name;
 
-            if (sender.GetType() == typeof(Image))
+            if (sender.GetType() == typeof(TrackerControls.TrackerButton))
             {
-                var img = sender as Image;
-                var itemChain = (ItemChain)img.DataContext;
+                var button = sender as TrackerControls.TrackerButton;
+                //var img = button.MainImageSource as Image;
+                var itemChain = (ItemChain)button.DataContext;
 
                 switch (e.ChangedButton)
                 {
@@ -182,10 +183,10 @@ namespace ZeldaTracker
                         itemChain.PreviousInChain();
                         break;
 
-                    // not sure if I want this
-                    //case MouseButton.Middle:
-                    //    itemChain.ResetChain();
-                    //    break;
+                        // not sure if I want this
+                        //case MouseButton.Middle:
+                        //    itemChain.ResetChain();
+                        //    break;
                 }
             }
         }

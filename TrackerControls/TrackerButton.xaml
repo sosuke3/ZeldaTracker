@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:effect="clr-namespace:GrayscaleEffect;assembly=GrayscaleEffect"
              xmlns:local="clr-namespace:TrackerControls"
              mc:Ignorable="d" 
              d:DesignHeight="64" d:DesignWidth="64">
@@ -15,10 +16,14 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <Image Name="MainImage" Grid.ColumnSpan="2" Grid.RowSpan="2"></Image>
-        <Image Name="TopLeftImage" Grid.Column="0" Grid.Row="0"></Image>
-        <Image Name="TopRightImage" Grid.Column="1" Grid.Row="0"></Image>
-        <Image Name="BottomLeftImage" Grid.Column="0" Grid.Row="1"></Image>
-        <Image Name="BottomRightImage" Grid.Column="1" Grid.Row="1"></Image>
+        <Image Name="MainImageControl" Grid.ColumnSpan="2" Grid.RowSpan="2" Source="{Binding MainImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}">
+            <Image.Effect>
+                <effect:GrayscaleEffect DesaturationFactor="{Binding GrayscaleEffect}"></effect:GrayscaleEffect>
+            </Image.Effect>
+        </Image>
+        <Image Name="TopLeftImageControl" Grid.Column="0" Grid.Row="0" Source="{Binding TopLeftImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}"></Image>
+        <Image Name="TopRightImageControl" Grid.Column="1" Grid.Row="0" Source="{Binding TopRightImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}"></Image>
+        <Image Name="BottomLeftImageControl" Grid.Column="0" Grid.Row="1" Source="{Binding BottomLeftImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}"></Image>
+        <Image Name="BottomRightImageControl" Grid.Column="1" Grid.Row="1" Source="{Binding BottomRightImageSource, RelativeSource={RelativeSource AncestorType=UserControl}}"></Image>
     </Grid>
 </UserControl>

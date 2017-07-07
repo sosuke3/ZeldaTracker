@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:effect="clr-namespace:GrayscaleEffect;assembly=GrayscaleEffect"
         xmlns:local="clr-namespace:ZeldaTracker"
+        xmlns:trackerControls="clr-namespace:TrackerControls;assembly=TrackerControls"
         mc:Ignorable="d"
         Title="MainWindow" Height="380" Width="244"
         Background="Black" Foreground="White">
@@ -21,11 +22,16 @@
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <Grid>
-                        <Image Width="32" Height="32" Source="{Binding Icon}" MouseUp="MouseButtonUp">
+                        <trackerControls:TrackerButton Width="32" 
+                                                       Height="32" 
+                                                       MainImageSource="{Binding Icon}" 
+                                                       DesaturationFactor="{Binding GrayscaleEffect}" 
+                                                       MouseUp="MouseButtonUp"></trackerControls:TrackerButton>
+                        <!--<Image Width="32" Height="32" Source="{Binding Icon}" MouseUp="MouseButtonUp">
                             <Image.Effect>
                                 <effect:GrayscaleEffect DesaturationFactor="{Binding GrayscaleEffect}"></effect:GrayscaleEffect>
                             </Image.Effect>
-                        </Image>
+                        </Image>-->
                         <local:OutlinedTextBlock Style="{StaticResource SquareFont}"
                                                  FontSize="12pt" 
                                                  FontWeight="Black" 

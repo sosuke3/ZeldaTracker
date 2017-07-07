@@ -30,6 +30,14 @@ namespace Tracker
             }
         }
 
+        public string IconPath
+        {
+            get
+            {
+                return _itemChain[_currentIndex].IconPath;
+            }
+        }
+
         public double GrayscaleEffect { get; set; } = ItemUnsetValue;
         public string ItemChainName { get; set; }
         public string ItemChainType { get; set; }

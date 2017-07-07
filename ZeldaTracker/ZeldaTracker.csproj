@@ -405,6 +405,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\TrackerControls\TrackerControls.csproj">
+      <Project>{164029d3-c512-4907-ae93-9bf6bb920311}</Project>
+      <Name>TrackerControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Tracker\Tracker.csproj">
       <Project>{c5939327-10ce-48fc-9bda-bc9dcd65b56e}</Project>
       <Name>Tracker</Name>
